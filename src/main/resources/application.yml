@@ -20,6 +20,10 @@ spring:
   docker:
     compose:
       lifecycle-management: start-only
+  graphql:
+    graphiql:
+      enabled: true
+    path: "/graphql"
 error:
   handling:
     http-status-in-json-response: true
