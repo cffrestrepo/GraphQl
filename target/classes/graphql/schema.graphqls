@@ -1,0 +1,8 @@
+type Query {
+    getAllEstudiantes: [Estudiante]
+}
+
+type Estudiante {
+    id: ID!
+    nombre: String!
+}
