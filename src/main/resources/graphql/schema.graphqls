@@ -34,6 +34,7 @@ type Hobby {
     id: ID!
     nombre: String!
     horasPorDias: String
+    sede: [Int]
 }
 
 type Nota {
