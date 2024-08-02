@@ -5,4 +5,6 @@ type Query {
 type Estudiante {
     id: ID!
     nombre: String!
+    apellido: String
+    profesion: String
 }

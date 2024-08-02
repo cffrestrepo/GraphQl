@@ -24,6 +24,9 @@ spring:
     graphiql:
       enabled: true
     path: "/graphql"
+  sql:
+    init:
+      mode: always
 error:
   handling:
     http-status-in-json-response: true
