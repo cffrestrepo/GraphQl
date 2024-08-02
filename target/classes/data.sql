@@ -96,6 +96,7 @@ INSERT INTO Docente_Materias (docente_Id, materia_Id) VALUES
                                                        (10009, 10009);
 INSERT INTO Materia_Nota (materia_Id, notas_Id) VALUES
                                                  (10000, 10000),
+                                                 (10000, 10002),
                                                  (10001, 10001),
                                                  (10002, 10002),
                                                  (10003, 10003),
@@ -106,4 +107,22 @@ INSERT INTO Materia_Nota (materia_Id, notas_Id) VALUES
                                                  (10008, 10008),
                                                  (10009, 10009);
 
+
+INSERT INTO SEDE (id, locacion) VALUES
+                                                 (10000, 'Bogota'),
+                                                 (10001, 'Chia'),
+                                                 (10002, 'Zipaquira'),
+                                                 (10003, 'Tunja');
+
+INSERT INTO Materia_Sede (materia_Id, sede_Id) VALUES
+                                                 (10000, 10000),
+                                                 (10001, 10001),
+                                                 (10002, 10002),
+                                                 (10003, 10003),
+                                                 (10004, 10001),
+                                                 (10005, 10002),
+                                                 (10006, 10003),
+                                                 (10007, 10000),
+                                                 (10008, 10002),
+                                                 (10009, 10001);
 

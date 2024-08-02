@@ -2,6 +2,8 @@ package edu.unisabana.graphql.service
 
 import edu.unisabana.graphql.domain.Materia
 import edu.unisabana.graphql.model.MateriaDTO
+import edu.unisabana.graphql.model.NotasDTO
+import edu.unisabana.graphql.model.SedeDTO
 import edu.unisabana.graphql.repos.DocenteRepository
 import edu.unisabana.graphql.repos.EstudianteRepository
 import edu.unisabana.graphql.repos.MateriaRepository
@@ -32,7 +34,8 @@ class MateriaService(
 
     fun `get`(id: Long): MateriaDTO = materiaRepository.findById(id)
             .map { materia -> mapToDTO(materia, MateriaDTO()) }
-            .orElseThrow { NotFoundException() }
+            .orElseThrow { NotFoundException("Materia with ID $id not found") }
+
 
     fun create(materiaDTO: MateriaDTO): Long {
         val materia = Materia()
@@ -62,28 +65,26 @@ class MateriaService(
         materiaDTO.id = materia.id
         materiaDTO.nombre = materia.nombre
         materiaDTO.profesor = materia.profesor
-        materiaDTO.notas = materia.notas?.stream()
-                ?.map { notas -> notas.id!! }
-                ?.toList()
-        materiaDTO.sede = materia.sede?.stream()
-                ?.map { sede -> sede.id!! }
-                ?.toList()
+        materiaDTO.notas = materia.notas?.map { nota ->
+            NotasDTO(id = nota.id, nota = nota.nota, actividad = nota.actividad )}
+        materiaDTO.sede =  materia.sede?.map { sede ->
+            SedeDTO(id = sede.id,  locacion= sede.locacion)}
         return materiaDTO
     }
 
     private fun mapToEntity(materiaDTO: MateriaDTO, materia: Materia): Materia {
         materia.nombre = materiaDTO.nombre
         materia.profesor = materiaDTO.profesor
-        val notas = notasRepository.findAllById(materiaDTO.notas ?: emptyList())
-        if (notas.size != (if (materiaDTO.notas == null) 0 else materiaDTO.notas!!.size)) {
-            throw NotFoundException("one of notas not found")
-        }
-        materia.notas = notas.toMutableSet()
-        val sede = sedeRepository.findAllById(materiaDTO.sede ?: emptyList())
-        if (sede.size != (if (materiaDTO.sede == null) 0 else materiaDTO.sede!!.size)) {
-            throw NotFoundException("one of sede not found")
-        }
-        materia.sede = sede.toMutableSet()
+        val notas = materiaDTO.notas?.map { nota ->
+            notasRepository.findById(nota.id!!).orElseThrow { NotFoundException("Nota with id $nota not found") }
+        }?.toMutableSet() ?: mutableSetOf()
+
+        materia.notas = notas
+        val sede = materiaDTO.sede?.map { sede ->
+            sedeRepository.findById(sede.id!!).orElseThrow { NotFoundException("Sede with id $sede not found") }
+        }?.toMutableSet() ?: mutableSetOf()
+
+        materia.sede = sede
         return materia
     }
 

@@ -17,8 +17,8 @@ class MateriaDTO {
     @Size(max = 255)
     var profesor: String? = null
 
-    var notas: List<Long>? = null
+    var notas: List<NotasDTO>? = emptyList()
 
-    var sede: List<Long>? = null
+    var sede: List<SedeDTO>? = emptyList()
 
 }

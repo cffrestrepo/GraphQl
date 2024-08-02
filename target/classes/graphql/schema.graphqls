@@ -1,6 +1,10 @@
 type Query {
     getAllEstudiantes: [Estudiante]
     estudiante(id: Int): Estudiante
+    getAllMaterias: [Materia]
+    getMateriaById(id: ID!): Materia
+    errors: [Error]
+
 }
 
 type Estudiante {
@@ -9,4 +13,33 @@ type Estudiante {
     apellido: String
     profesion: String
     contactos: [String]
+}
+
+type Materia {
+    id: ID!
+    nombre: String!
+    profesor: String
+    notas: [Nota]
+    sede: [Sede]
+
+}
+
+type Sede {
+    id: ID
+    locacion: String
+}
+
+type Nota {
+    id: ID
+    nota: String
+    actividad: String
+}
+
+enum ErrorCode {
+    NOT_FOUND
+}
+
+type Error {
+    code: ErrorCode!
+    message: String!
 }
