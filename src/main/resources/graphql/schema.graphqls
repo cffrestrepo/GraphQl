@@ -1,5 +1,6 @@
 type Query {
     getAllEstudiantes: [Estudiante]
+    estudiante(id: Int): Estudiante
 }
 
 type Estudiante {
@@ -7,4 +8,5 @@ type Estudiante {
     nombre: String!
     apellido: String
     profesion: String
+    contactos: [String]
 }
