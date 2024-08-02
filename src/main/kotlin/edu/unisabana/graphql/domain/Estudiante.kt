@@ -22,14 +22,14 @@ class Estudiante {
         updatable = false
     )
     @SequenceGenerator(
-        name = "primary_sequence",
-        sequenceName = "primary_sequence",
+        name = "estud_primary_sequence",
+        sequenceName = "estud_primary_sequence",
         allocationSize = 1,
-        initialValue = 10000
+        initialValue = 10100
     )
     @GeneratedValue(
         strategy = GenerationType.SEQUENCE,
-        generator = "primary_sequence"
+        generator = "estud_primary_sequence"
     )
     var id: Int? = null
 

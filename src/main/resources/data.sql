@@ -1,14 +1,14 @@
 INSERT INTO Estudiante (id, nombre, apellido, profesion, contactos) VALUES
-                                                                        (10000, 'Juan', 'Perez', 'Ingeniero', '["juan.perez@example.com", "123-456-7890"]'),
-                                                                        (10001, 'Maria', 'Gomez', 'Doctora', '["maria.gomez@example.com", "123-456-7891"]'),
-                                                                        (10002, 'Carlos', 'Rodriguez', 'Abogado', '["carlos.rodriguez@example.com", "123-456-7892"]'),
-                                                                        (10003, 'Ana', 'Martinez', 'Arquitecta', '["ana.martinez@example.com", "123-456-7893"]'),
-                                                                        (10004, 'Luis', 'Fernandez', 'Profesor', '["luis.fernandez@example.com", "123-456-7894"]'),
-                                                                        (10005, 'Laura', 'Lopez', 'Enfermera', '["laura.lopez@example.com", "123-456-7895"]'),
-                                                                        (10006, 'Jose', 'Garcia', 'Contador', '["jose.garcia@example.com", "123-456-7896"]'),
-                                                                        (10007, 'Elena', 'Hernandez', 'Psicologa', '["elena.hernandez@example.com", "123-456-7897"]'),
-                                                                        (10008, 'Miguel', 'Ramirez', 'Diseñador', '["miguel.ramirez@example.com", "123-456-7898"]'),
-                                                                        (10009, 'Sofia', 'Gonzalez', 'Periodista', '["sofia.gonzalez@example.com", "123-456-7899"]');
+                                                                        (10000, 'Juan', 'Perez', 'Ingeniero', JSON_ARRAY('juan.perez@example.com')),
+                                                                        (10001, 'Maria', 'Gomez', 'Doctora', JSON_ARRAY('maria.gomez@example.com')),
+                                                                        (10002, 'Carlos', 'Rodriguez', 'Abogado', JSON_ARRAY('carlos.rodriguez@example.com')),
+                                                                        (10003, 'Ana', 'Martinez', 'Arquitecta', JSON_ARRAY('ana.martinez@example.com')),
+                                                                        (10004, 'Luis', 'Fernandez', 'Profesor', JSON_ARRAY('luis.fernandez@example.com')),
+                                                                        (10005, 'Laura', 'Lopez', 'Enfermera', JSON_ARRAY('laura.lopez@example.com')),
+                                                                        (10006, 'Jose', 'Garcia', 'Contador', JSON_ARRAY('jose.garcia@example.com')),
+                                                                        (10007, 'Elena', 'Hernandez', 'Psicologa', JSON_ARRAY('elena.hernandez@example.com')),
+                                                                        (10008, 'Miguel', 'Ramirez', 'Diseñador', JSON_ARRAY('miguel.ramirez@example.com')),
+                                                                        (10009, 'Sofia', 'Gonzalez', 'Periodista', JSON_ARRAY('sofia.gonzalez@example.com'));
 
 INSERT INTO Materia (id, nombre, profesor) VALUES
                                                (10000, 'Matematicas', 'Carlos Perez'),
@@ -23,16 +23,16 @@ INSERT INTO Materia (id, nombre, profesor) VALUES
                                                (10009, 'Musica', 'Sofia Gonzalez');
 
 INSERT INTO Docente (id, nombre, apellido, profesion, contactos) VALUES
-                                                                     (10000, 'Carlos', 'Perez', 'Profesor de Matematicas', '["carlos.perez@unisabana.edu", "321-456-7890"]'),
-                                                                     (10001, 'Maria', 'Lopez', 'Profesora de Fisica', '["maria.lopez@unisabana.edu", "321-456-7891"]'),
-                                                                     (10002, 'Juan', 'Hernandez', 'Profesor de Quimica', '["juan.hernandez@unisabana.edu", "321-456-7892"]'),
-                                                                     (10003, 'Ana', 'Rodriguez', 'Profesora de Biologia', '["ana.rodriguez@unisabana.edu", "321-456-7893"]'),
-                                                                     (10004, 'Luis', 'Gomez', 'Profesor de Historia', '["luis.gomez@unisabana.edu", "321-456-7894"]'),
-                                                                     (10005, 'Laura', 'Fernandez', 'Profesora de Geografia', '["laura.fernandez@unisabana.edu", "321-456-7895"]'),
-                                                                     (10006, 'Jose', 'Martinez', 'Profesor de Informatica', '["jose.martinez@unisabana.edu", "321-456-7896"]'),
-                                                                     (10007, 'Elena', 'Sanchez', 'Profesora de Literatura', '["elena.sanchez@unisabana.edu", "321-456-7897"]'),
-                                                                     (10008, 'Miguel', 'Ramirez', 'Profesor de Arte', '["miguel.ramirez@unisabana.edu", "321-456-7898"]'),
-                                                                     (10009, 'Sofia', 'Gonzalez', 'Profesora de Musica', '["sofia.gonzalez@unisabana.edu", "321-456-7899"]');
+                                                                     (10000, 'Carlos', 'Perez', 'Profesor de Matematicas', JSON_ARRAY('carlos.perez@unisabana.edu')),
+                                                                     (10001, 'Maria', 'Lopez', 'Profesora de Fisica', JSON_ARRAY('maria.lopez@unisabana.edu')),
+                                                                     (10002, 'Juan', 'Hernandez', 'Profesor de Quimica', JSON_ARRAY('juan.hernandez@unisabana.edu')),
+                                                                     (10003, 'Ana', 'Rodriguez', 'Profesora de Biologia', JSON_ARRAY('ana.rodriguez@unisabana.edu')),
+                                                                     (10004, 'Luis', 'Gomez', 'Profesor de Historia', JSON_ARRAY('luis.gomez@unisabana.edu')),
+                                                                     (10005, 'Laura', 'Fernandez', 'Profesora de Geografia', JSON_ARRAY('laura.fernandez@unisabana.edu')),
+                                                                     (10006, 'Jose', 'Martinez', 'Profesor de Informatica', JSON_ARRAY('jose.martinez@unisabana.edu')),
+                                                                     (10007, 'Elena', 'Sanchez', 'Profesora de Literatura', JSON_ARRAY('elena.sanchez@unisabana.edu')),
+                                                                     (10008, 'Miguel', 'Ramirez', 'Profesor de Arte', JSON_ARRAY('miguel.ramirez@unisabana.edu')),
+                                                                     (10009, 'Sofia', 'Gonzalez', 'Profesora de Musica', JSON_ARRAY('sofia.gonzalez@unisabana.edu'));
 
 INSERT INTO Hobby (id, nombre, horas_Por_Dias) VALUES
                                                  (10000, 'Futbol', '2'),
