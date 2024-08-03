@@ -5,10 +5,20 @@ type Query {
     getMateriaById(id: ID!): Materia
     getAllHobbies: [Hobby]
     getHobby(id: Int): Hobby
+    getAllDocentes: [Docente]
+    getDocente(id:Int): Docente
     errors: [Error]
 }
 
 type Estudiante {
+    id: ID!
+    nombre: String!
+    apellido: String
+    profesion: String
+    contactos: [String]
+}
+
+type Docente {
     id: ID!
     nombre: String!
     apellido: String
