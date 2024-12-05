@@ -31,4 +31,5 @@ class Sede {
     @Column(nullable = false)
     var locacion: String? = null
 
+
 }
